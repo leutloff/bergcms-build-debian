@@ -1,0 +1,26 @@
+env:
+  global:
+    - secure: k7XQ1+F5z/i49XgqePdjHB32PyjF7LxUn2dtFBG1W3cwpUm8WQQSvt4q7gLAH73Sh0v4NXpL1R6M04EZfbrpU9y00QpIkjzWzunjjeYZtDBRzbaSDqnR8CMXKS9J/aG0aTDzMFfvRwHjH4PC/YWzLoguulSJP/ehr0VbLJiLSzM=
+    - secure: gpudPjJYyxFNxeBC3yKxUQ//eVlgOib3+TC/H9WpplvAXmune7Hyobpp6V5zV9cyypmhZvO1lftgqS6NO2DbHlXnljHrD1kOWLFRe0/bazi6rxhvVkjyZOAkrP9mtqKA1riydeNgeEqcmoqPzi6GZ1zahi68Amj8UTosoRoWjjA=
+    - secure: PtmjgbGjaB3Ta5fIxwuA1bfK2Q0TgAP2ZvoMuVak/2CRHaArnwQodS3JacpPPHEjpqINe65IUvLpgXCONC0OBl3o/fJb0n7LzBnENqXYyU6wsHWb8aI2d7pOaWSm7C4pvZjiXcCbLUPKD3Cc90N8iR+eAABKdUm4GfiaT99ubS0=
+    - secure: "OCd/NzEOCuD2p+BsYCr4TaUyKXdo3dmzwf2U5VdRQUXPK/TzzTx+HqOy46VxJ/reySYzGAXTF/Zxmu6289GdOzol3v6dIIGdq/g+62+0/SCtFK8IhaVJNRV1dC9ccN7q9oskzmmgEtjuvPAj0gDX0EhtOVWfogobCGvFITjJcgE="
+    - secure: "J1slVeysWT4pntabPUVdOZnlOuOBO95GuRwR7s4GMPWOe8Wm0iWLC07Qr5DoeUK0A17vxsxv62IjzOQsoTARu7yxMjXnWWzit8nqDkOLCi/T6LjOTmDjvB6g0ohQ7Nw8oMWNqqN5HOzd7BpMXVC293+hWkDXvAX/+wIMtbV1gZQ="
+
+language: bash
+
+services: docker
+
+script:
+    - mkdir -p bergcms-build
+    - docker build --tag=bergcms-build-debian .
+    - docker images
+    - ARCHIVE=$(docker run --name=co-bergcms-build-debian  bergcms-build-debian)
+    - docker cp co-bergcms-build-debian:$ARCHIVE bergcms-build 
+    - ls -al . bergcms-build
+    - docker rm co-bergcms-build-debian
+after_success:
+    - pushd bergcms-build
+    - ls -l Berg*.zip
+    - wput Berg*.zip ftp://$FTP_USER:$FTP_PASSWORD@$FTP_HOST/upload/ --reupload --less-verbose --tries=2 || true
+    - popd
+
