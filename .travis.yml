@@ -18,6 +18,7 @@ script:
     - docker cp co-bergcms-build-debian:$ARCHIVE bergcms-build 
     - ls -al . bergcms-build
     - docker rm co-bergcms-build-debian
+
 after_success:
     - pushd bergcms-build
     - ls -l Berg*.zip
