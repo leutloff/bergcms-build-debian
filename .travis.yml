@@ -17,13 +17,11 @@ script:
 - ls -al . bergcms-build
 - docker rm co-bergcms-build-debian
 after_success:
-- pushd bergcms-build
 - echo $ARCHIVE
 - LOCALARCHIVE=$(echo $ARCHIVE | sed -e 's+/usr/src+.+')
 - echo $LOCALARCHIVE
-- ls -l Berg*.zip $LOCALARCHIVE
+- ls -l bergcms-build/Berg*.zip $LOCALARCHIVE
 - wput $LOCALARCHIVE ftp://$FTP_USER:$FTP_PASSWORD@$FTP_HOST/upload/ \ --reupload --less-verbose --tries=2 || true
-- popd
 deploy:
   provider: releases
   api_key:
