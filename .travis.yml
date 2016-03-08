@@ -1,33 +1,32 @@
 env:
   global:
-    - secure: k7XQ1+F5z/i49XgqePdjHB32PyjF7LxUn2dtFBG1W3cwpUm8WQQSvt4q7gLAH73Sh0v4NXpL1R6M04EZfbrpU9y00QpIkjzWzunjjeYZtDBRzbaSDqnR8CMXKS9J/aG0aTDzMFfvRwHjH4PC/YWzLoguulSJP/ehr0VbLJiLSzM=
-    - secure: gpudPjJYyxFNxeBC3yKxUQ//eVlgOib3+TC/H9WpplvAXmune7Hyobpp6V5zV9cyypmhZvO1lftgqS6NO2DbHlXnljHrD1kOWLFRe0/bazi6rxhvVkjyZOAkrP9mtqKA1riydeNgeEqcmoqPzi6GZ1zahi68Amj8UTosoRoWjjA=
-    - secure: PtmjgbGjaB3Ta5fIxwuA1bfK2Q0TgAP2ZvoMuVak/2CRHaArnwQodS3JacpPPHEjpqINe65IUvLpgXCONC0OBl3o/fJb0n7LzBnENqXYyU6wsHWb8aI2d7pOaWSm7C4pvZjiXcCbLUPKD3Cc90N8iR+eAABKdUm4GfiaT99ubS0=
-    - secure: "OCd/NzEOCuD2p+BsYCr4TaUyKXdo3dmzwf2U5VdRQUXPK/TzzTx+HqOy46VxJ/reySYzGAXTF/Zxmu6289GdOzol3v6dIIGdq/g+62+0/SCtFK8IhaVJNRV1dC9ccN7q9oskzmmgEtjuvPAj0gDX0EhtOVWfogobCGvFITjJcgE="
-    - secure: "J1slVeysWT4pntabPUVdOZnlOuOBO95GuRwR7s4GMPWOe8Wm0iWLC07Qr5DoeUK0A17vxsxv62IjzOQsoTARu7yxMjXnWWzit8nqDkOLCi/T6LjOTmDjvB6g0ohQ7Nw8oMWNqqN5HOzd7BpMXVC293+hWkDXvAX/+wIMtbV1gZQ="
-
+  - secure: kI4JnmU7YPPTQ9VcCE0e7NzOeb+rIikkJSBbaDv9lPciZSpPGTgUu47srgGOuIzSeWb/ZkSL/3+XoWcoQ83J2sKzuz5g8cCJhHFv/zpVu/7EiL7L0yPtt4UpCFu+dx2qlVuwu4uuledQk6QZKS5EzOG6TyLye75TVsj22G8hfKWo4kw8fje2C+suWP5DrJ1RS7BsGeXk8VA+Lf/Dr1K9Z8vN1wwnppqMt25utW/q3yCNLaP6lu4sVhFsEWP8bFQaLIoOeYfmJLSqhsvsYMfUqmMpbBrxqbVGPG4cqQ9HFfJSZGzPk+2fCu0GXMNohAG//uYi+g7dJZZ+ByDbz8LRd96cMDkVMyA8yUTJg/rQjtV9ygG5MHZnYPf/d4mUAdASeTJwCI21IW2JOHsFpjpP784/ULF7zYR0XAo/7pzOg0eR9JuFSRP/9/Irn/wGM7kADHayTRiKWj0aVKQbECGGP79gexoElCHb5mI9cOIVVGeRIiZt4+YSUo55Gz2j/pU4m3FQmUL8RQ8EnbMXvEbtH3BG96E0XUgXsxSVz6RvSiNmCiUUD60mGjaH1FpUMAOpaBsHQ0ek0hrEbWPwKWq4QMxLrerJdsO4AIYVu2su4mDpTGWXnPDIzgUvlw4c4Mgl8iS69TXGQdVf9uBNrIQsq8vYQvFpqvWkM6IW7gyUBdQ=
+  - secure: h/OS8EGkX8SYeM45cgkX+nreaYeFPpIJMsuZv1lS36PzibflXYnPQjbKQpntl6vNeSfmTcgGIyTl3B45fV29XP6qzwVjU1pS5v+RO+UctGCFMSTmyNjNmd4z+XZuXUq2paK1VtMzrMfGveYyxPT0W8RHdQopxNDgp5xByM1V/o2lKvFsrb92ybMnIeDnpySBSUsoLqH9LLvkeR7W2zFOe1gEl5USbwP6qVoG1oNwF/Al31QxIhV3GSKNmwlMnPrEajLiD2ASZHNuKLeKid6j95LsrFi3XF3I4x02Vf5Ekr3QC3ZXQmLrYixh3XOQALuVHSF89AV9gaEEiTkPPU+PIdME3ZNcfQuM54tI/3Y+1XO0SB7u8CnPXpfhrqO7EAbF0oqh6UvlLFPMHGYAnIKyGzLogAfrxOp1FINzgMIPCPV88DN4fCG0XVRyzhFZOTQ+NcqaWKmsuxM+30W0182YQXuYMagw0usRsi4qeTSdVgObvX+kpcI4MU1w0xNCjcDotcvEFPz25ePxZLSEP6zuiTPnUK3eGwrxA5EVy2rGyK8tdPnIG6oUw8z1c+20Yj+H35CRl6eN4ZOth/qKtDyWio6+1AKE0vmSaoTjFD2/kcWTL1P8dSdevrgDA/voocgtTZFCXH203bEedRdpofES28d64xrP1fEqutEhglDmjmk=
+  - secure: PnwZYRLh/N1wlYw2KjHAu/t43En2rHSDR3jYqZzrDSG7909EFBE1lZycLy2kn7tGiLHvI3VmXhU5p5YwmthRtt+laTfHfO4BQUQqRek/rqzBnR0mrQj1w42dtj5aVRbyb9RLi3afZXKaonnVhhKU8MgIKV+IXch4w5h348RWKKZrgHyElJ38AvNtTzczhCTEzh+mKE4xiXdyZ+L1PvhlvGY90SON+N0XumN0KuUcVV5MUI/2iL5tI++stRhGUbF6IaKMkysn8xpLwyJMryD+cqZzKRwE8A3IWfArMluKlcPUPlR1/hoDNquGnKVTi8GAwiyVmXOcXvzZG97Mm3wB4Hrv2L3mcUlyHmvI7n0YHaMMoqIHEkhjKb2QpqC4ySmItINS3jzsCmheFuvwXz2QtBaPS1pq+xbxjKYupVNy7x3V532dieO151NectcDIQQOgcTb7qK3JkiYY30DNqZmIkDhLpcEB5GQPj6FbNhAeBddvmzg3hJiGEgSTSIR5dsLOZer/eDmOx6dmX23/EjrL/WOpb9N/DzpaZCmHvofYUWKJPyCGb1qgFZK3L7JflzkdjhCFb3DNROuECqUEDgRm5FpVNyYQ2MRn/ykwlmW2hPCqQXBl9r5YSR1vZbabbdV3YPmiF4l+MBB7skkz2xvzmLebRTWdTOg9Jf35HKK9Ds=
 language: bash
-
 sudo: required
-
 services: docker
-
 install:
-    # wput is used to copy the package to an FTP site.
-    - sudo apt-get install wput -y
-
+- sudo apt-get install wput -y
 script:
-    - mkdir -p bergcms-build
-    - docker build --tag=bergcms-build-debian .
-    - docker images
-    - ARCHIVE=$(docker run --name=co-bergcms-build-debian  bergcms-build-debian)
-    - docker cp co-bergcms-build-debian:$ARCHIVE bergcms-build 
-    - ls -al . bergcms-build
-    - docker rm co-bergcms-build-debian
-
+- mkdir -p bergcms-build
+- docker build --tag=bergcms-build-debian .
+- docker images
+- ARCHIVE=$(docker run --name=co-bergcms-build-debian  bergcms-build-debian)
+- docker cp co-bergcms-build-debian:$ARCHIVE bergcms-build
+- ls -al . bergcms-build
+- docker rm co-bergcms-build-debian
 after_success:
-    - pushd bergcms-build
-    - ls -l Berg*.zip
-    - wput Berg*.zip ftp://$FTP_USER:$FTP_PASSWORD@$FTP_HOST/upload/ --reupload --less-verbose --tries=2 || true
-    - popd
-
+- pushd bergcms-build
+- ls -l Berg*.zip
+- wput Berg*.zip ftp://$FTP_USER:$FTP_PASSWORD@$FTP_HOST/upload/ \ --reupload --less-verbose --tries=2 || true
+- popd
+deploy:
+  provider: releases
+  api_key:
+    secure: pCNnHa2p62XrCtFrQHZqidTRApN6t+RvnTneMnBW2lysBa2KcmPtmxiJJFQcJTCeU4SylF38k0BAJ9EWTIjuJCfZc4enlIbC7FOf1Eb5A6DG3eGmfAWpYPObBaV/4fyInENf+FkMMnQ6T4iu62/7g5O6U2uACruSGEYvju7QJ59l0DgklAeqomah1VN69B68ZExhV+md4LUNEMn6mP/gdTZMcOCQvSqDDuzEpHPUz32oNX4sM9lhW7/wSznqE1ZVq39n8jzNpqMcJApl2D4vl3SMgUSJZtxrtX2Rt57FPbH1bp9rn+QDbuFMs6IcRuALnuNxKQJ/Bp3bUrXBmpZd1fJxETPOy0uPBpcUr6d0Kd1Hcx1D7ywHI41+nRY+bRn0iJtWFVdklvACQO/QQfPI43tqsU/U0KV6PMfuNyVBJGeTiTxM36yXxnVaLzmW/XXRVh1N2PNz89ZzMJfls41E/a2XG1dI+UxESTeNbUpWOpcjWdE/Xpp/2Y6YsAewpwt6T7BO3ZduYXgRlgiOQS2O93nUWDiy+Ci2+84Ice8O1gtPhIDwkwQVl+wkPPjaW1N/SL+ODl6GnQIhXM4UpJZR8A7l4ww627Dk+ZY7Sb5TDM+vGFqdPspXHd239mb7q5QO9ExgOMWHp/1Sps2j5f+mSJvgTmW7R7h0fA6VBvy1uyg=
+  file: Berg*.zip
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: leutloff/bergcms-build-debian
