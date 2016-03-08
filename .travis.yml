@@ -28,6 +28,7 @@ deploy:
     secure: pCNnHa2p62XrCtFrQHZqidTRApN6t+RvnTneMnBW2lysBa2KcmPtmxiJJFQcJTCeU4SylF38k0BAJ9EWTIjuJCfZc4enlIbC7FOf1Eb5A6DG3eGmfAWpYPObBaV/4fyInENf+FkMMnQ6T4iu62/7g5O6U2uACruSGEYvju7QJ59l0DgklAeqomah1VN69B68ZExhV+md4LUNEMn6mP/gdTZMcOCQvSqDDuzEpHPUz32oNX4sM9lhW7/wSznqE1ZVq39n8jzNpqMcJApl2D4vl3SMgUSJZtxrtX2Rt57FPbH1bp9rn+QDbuFMs6IcRuALnuNxKQJ/Bp3bUrXBmpZd1fJxETPOy0uPBpcUr6d0Kd1Hcx1D7ywHI41+nRY+bRn0iJtWFVdklvACQO/QQfPI43tqsU/U0KV6PMfuNyVBJGeTiTxM36yXxnVaLzmW/XXRVh1N2PNz89ZzMJfls41E/a2XG1dI+UxESTeNbUpWOpcjWdE/Xpp/2Y6YsAewpwt6T7BO3ZduYXgRlgiOQS2O93nUWDiy+Ci2+84Ice8O1gtPhIDwkwQVl+wkPPjaW1N/SL+ODl6GnQIhXM4UpJZR8A7l4ww627Dk+ZY7Sb5TDM+vGFqdPspXHd239mb7q5QO9ExgOMWHp/1Sps2j5f+mSJvgTmW7R7h0fA6VBvy1uyg=
   file: $LOCALARCHIVE
   skip_cleanup: true
+  draft: true
   on:
     tags: true
     repo: leutloff/bergcms-build-debian
