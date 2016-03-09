@@ -36,7 +36,7 @@ ENV BUILDDIR /usr/src/bergcms-build
 ENV EXPORTDIR /opt/bergcms 
     
 # Get the Source
-RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" && git clone git://github.com/leutloff/berg.git && cd berg && git checkout 85994bb && git submodule update --init --recursive
+RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" && git clone git://github.com/leutloff/berg.git && cd berg && git checkout 302cc7a && git submodule update --init --recursive
 
 # Build ctemplate
 RUN cd "$BGDIR/src/external/ctemplate" \
@@ -46,7 +46,7 @@ RUN cd "$BGDIR/src/external/ctemplate" \
 
 RUN ls -l "$BGDIR/src/external/ctemplate" "$BGDIR/src/external/ctemplate/include"
 RUN ls -l /usr/src/berg/src/external/ctemplate/include
- 
+
 # Build the Berg CMS
 RUN mkdir -p "$BUILDDIR" && cd "$BUILDDIR" \
  && cmake -D CMAKE_BUILD_TYPE=Distribution -D CMAKE_VERBOSE_MAKEFILE=FALSE "$BGDIR/src" \
