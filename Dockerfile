@@ -6,7 +6,7 @@ MAINTAINER Christian Leutloff <leutloff@sundancer.oche.de>
 # Install the build environment
 # Jessie: libboost-dev 1.55.02, gcc 4.9.2, (cmake 3.0)
 # Python is required by ctemplate, only
-# Curl is used to download CMake 3.5
+# Curl with ca-certificates is used to download CMake 3.5
 RUN apt-get update && apt-get install --no-install-recommends -y \
     gcc \
     g++ \
@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     make \
     patch \
     curl \
+    ca-certificates \
     file \
     less \
     git \
@@ -35,7 +36,13 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 # Install CMake 3.5, export OPTDIR=/opt, export CMAKEDIR=/opt/cmake-3.5, get shellscript installer, excute the downloaded file, add link from /usr/local/bin
 ENV OPTDIR /opt
 ENV CMAKEDIR /opt/cmake-3.5
-RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && curl -sLO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-x86_64.sh && /bin/sh ./cmake-*-Linux-x86_64.sh --prefix=$CMAKEDIR --skip-license && ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && cd -)
+RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && \
+    curl -LO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-x86_64.sh && \
+    /bin/sh ./cmake-*-Linux-x86_64.sh --prefix=$CMAKEDIR --skip-license && \
+    ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && \
+    ln -sf $CMAKEDIR/bin/cpack /usr/local/bin/cpack && \
+    ln -sf $CMAKEDIR/bin/ctest /usr/local/bin/ctest && \
+    cd -)
 #RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && curl -sLO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-i386.sh && /bin/sh ./cmake-*-Linux-i386.sh --prefix=$CMAKEDIR --skip-license && ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && cd -)
 RUN cmake --version
  
@@ -45,7 +52,7 @@ ENV BUILDDIR /usr/src/bergcms-build
 ENV EXPORTDIR /opt/bergcms 
     
 # Get the Source
-RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" && git clone git://github.com/leutloff/berg.git && cd berg && git checkout 6387b2b && git submodule update --init --recursive
+RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" && git clone git://github.com/leutloff/berg.git && cd berg && git checkout 24c0e71 && git submodule update --init --recursive
 
 # Build ctemplate
 RUN cd "$BGDIR/src/external/ctemplate" \
