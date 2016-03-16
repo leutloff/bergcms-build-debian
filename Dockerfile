@@ -1,10 +1,12 @@
+# Debian 8.0 Jessie, 64-Bit
 FROM debian:jessie
 
 MAINTAINER Christian Leutloff <leutloff@sundancer.oche.de>
 
 # Install the build environment
-# Jessie: libboost-dev 1.55.02, gcc 4.9.2, cmake 3.0
+# Jessie: libboost-dev 1.55.02, gcc 4.9.2, (cmake 3.0)
 # Python is required by ctemplate, only
+# Curl is used to download CMake 3.5
 RUN apt-get update && apt-get install --no-install-recommends -y \
     gcc \
     g++ \
@@ -15,7 +17,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     automake \
     make \
     patch \
-    cmake \
+    curl \
     file \
     less \
     git \
@@ -30,6 +32,13 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
        libboost-thread-dev libboost-test-dev \
  && rm -rf /var/lib/apt/lists/*
 
+# Install CMake 3.5, export OPTDIR=/opt, export CMAKEDIR=/opt/cmake-3.5, get shellscript installer, excute the downloaded file, add link from /usr/local/bin
+ENV OPTDIR /opt
+ENV CMAKEDIR /opt/cmake-3.5
+RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && curl -sLO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-x86_64.sh && bash ./cmake-*-Linux-x86_64.sh --prefix=$CMAKEDIR --skip-license && ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && cd -)
+#RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && curl -sLO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-i386.sh && bash ./cmake-*-Linux-i386.sh --prefix=$CMAKEDIR --skip-license && ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && cd -)
+RUN cmake --version
+ 
 ENV BASEDIR /usr/src
 ENV BGDIR /usr/src/berg
 ENV BUILDDIR /usr/src/bergcms-build  
