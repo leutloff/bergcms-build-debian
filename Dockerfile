@@ -35,8 +35,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 # Install CMake 3.5, export OPTDIR=/opt, export CMAKEDIR=/opt/cmake-3.5, get shellscript installer, excute the downloaded file, add link from /usr/local/bin
 ENV OPTDIR /opt
 ENV CMAKEDIR /opt/cmake-3.5
-RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && curl -sLO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-x86_64.sh && bash ./cmake-*-Linux-x86_64.sh --prefix=$CMAKEDIR --skip-license && ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && cd -)
-#RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && curl -sLO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-i386.sh && bash ./cmake-*-Linux-i386.sh --prefix=$CMAKEDIR --skip-license && ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && cd -)
+RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && curl -sLO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-x86_64.sh && /bin/sh ./cmake-*-Linux-x86_64.sh --prefix=$CMAKEDIR --skip-license && ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && cd -)
+#RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && curl -sLO https://cmake.org/files/v3.5/cmake-3.5.0-Linux-i386.sh && /bin/sh ./cmake-*-Linux-i386.sh --prefix=$CMAKEDIR --skip-license && ln -sf $CMAKEDIR/bin/cmake /usr/local/bin/cmake && cd -)
 RUN cmake --version
  
 ENV BASEDIR /usr/src
