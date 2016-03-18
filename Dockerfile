@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
        libboost-thread-dev libboost-test-dev \
  && rm -rf /var/lib/apt/lists/*
 
-# Install CMake 3.5, export OPTDIR=/opt, export CMAKEDIR=/opt/cmake-3.5, get shellscript installer, excute the downloaded file, add link from /usr/local/bin
+# Install CMake 3.5, export OPTDIR=/opt, export CMAKEDIR=/opt/cmake-3.5, get shellscript installer, execute the downloaded file, add link from /usr/local/bin
 ENV OPTDIR /opt
 ENV CMAKEDIR /opt/cmake-3.5
 RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" && \
@@ -52,7 +52,7 @@ ENV BUILDDIR /usr/src/bergcms-build
 ENV EXPORTDIR /opt/bergcms 
     
 # Get the Source
-RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" && git clone git://github.com/leutloff/berg.git && cd berg && git checkout 24c0e71 && git submodule update --init --recursive
+RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" && git clone git://github.com/leutloff/berg.git && cd berg && git checkout 227ccac && git submodule update --init --recursive
 
 # Build ctemplate
 RUN cd "$BGDIR/src/external/ctemplate" \
