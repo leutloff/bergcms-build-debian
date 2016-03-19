@@ -21,7 +21,7 @@ after_success:
 - LOCALARCHIVE=$(echo $ARCHIVE | sed -e 's+/usr/src+.+')
 - echo $LOCALARCHIVE
 - ls -l bergcms-build/Berg*.zip $LOCALARCHIVE
-- wput $LOCALARCHIVE ftp://$FTP_USER:$FTP_PASSWORD@$FTP_HOST/upload/ \ --reupload --less-verbose --tries=2 || true
+- wput $LOCALARCHIVE ftp://$FTP_USER:$FTP_PASSWORD@$FTP_HOST/upload/ --reupload --less-verbose --tries=2 || true
 deploy:
   provider: releases
   api_key:
