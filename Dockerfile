@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 #       libboost-test-dev libboost-thread-dev
 
 
-# Install CMake 3.5, export OPTDIR=/opt, export CMAKEDIR=/opt/cmake-3.5, get shellscript installer, excute the downloaded file, add link from /usr/local/bin
+# Install CMake 3.5, export OPTDIR=/opt, export CMAKEDIR=/opt/cmake-3.5, get shellscript installer, execute the downloaded file, add link from /usr/local/bin
 ENV OPTDIR /opt
 ENV CMAKEDIR /opt/cmake-3.5
 RUN mkdir -p "$OPTDIR" "$CMAKEDIR" && (cd "$OPTDIR" \
