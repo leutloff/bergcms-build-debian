@@ -83,14 +83,6 @@ RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" \
     && git checkout 20c232d  \
     && git submodule update --init --recursive
 
-# Build ctemplate
-RUN cd "$BGDIR/src/external/ctemplate" \
-    && ./configure --prefix "$BGDIR/src/external/ctemplate" 1>/dev/null \
-    && make \
-    && make install
-
-RUN ls -l "$BGDIR/src/external/ctemplate" "$BGDIR/src/external/ctemplate/include/ctemplate"
-
 # Build the Berg CMS
 RUN mkdir -p "$BUILDDIR" && cd "$BUILDDIR" \
     && cmake -D CMAKE_BUILD_TYPE=Distribution -D CMAKE_VERBOSE_MAKEFILE=FALSE -D Boost_DEBUG=FALSE "$BGDIR/src" \
