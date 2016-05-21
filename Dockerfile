@@ -60,7 +60,7 @@ RUN curl -LO https://downloads.sourceforge.net/project/boost/boost/${boost_versi
     && tar --bzip2 -xf ${boost_dir}.tar.bz2 \
     && rm ${boost_dir}.tar.bz2 \
     && cd ${boost_dir} \
-    && ./bootstrap.sh --with-libraries=atomic,chrono,date_time,filesystem,iostreams,log,program_options,regex,signals,system,test,thread \
+    && ./bootstrap.sh --with-libraries=atomic,chrono,date_time,filesystem,iostreams,log,locale,program_options,regex,signals,system,test,thread \
     && ./b2 -j 4 link=shared runtime-link=shared install -d0 --prefix=/usr \
     && cd .. && rm -rf ${boost_dir} && ldconfig
 RUN find /usr/lib -name 'libboost*.so.*' -print
@@ -80,7 +80,7 @@ ENV EXPORTDIR /opt/bergcms
 RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" \
     && git clone git://github.com/leutloff/bergcms.git bergcms \
     && cd bergcms \
-    && git checkout 2451997 \
+    && git checkout 20c232d  \
     && git submodule update --init --recursive
 
 # Build ctemplate
