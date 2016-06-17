@@ -6,17 +6,16 @@ ARG CMAKE_ARCH=x86_64
 MAINTAINER Christian Leutloff <leutloff@sundancer.oche.de>
 
 # Install the build environment
-# Python is required by ctemplate, only
 # Curl with ca-certificates is used to download CMake 3.5
 RUN apt-get update && apt-get install --no-install-recommends -y \
     gcc \
     g++ \
-    python \
     perl \
     libtool \
     autoconf \
     automake \
     make \
+    texlive texlive-binaries texlive-latex-extra texlive-lang-german \
     patch \
     curl \
     ca-certificates \
@@ -80,8 +79,10 @@ ENV EXPORTDIR /opt/bergcms
 RUN mkdir -p "$BASEDIR" && cd "$BASEDIR" \
     && git clone git://github.com/leutloff/bergcms.git bergcms \
     && cd bergcms \
-    && git checkout 20c232d  \
+    && git checkout -B master 3cd9397 \
     && git submodule update --init --recursive
+
+RUN cd "$BGDIR" && ./build_documentation.sh
 
 # Build the Berg CMS
 RUN mkdir -p "$BUILDDIR" && cd "$BUILDDIR" \
